@@ -1,0 +1,41 @@
+/**index.wxss**/
+@import "/view/view-h-item.wxss";
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.user-motto {
+  margin-top: 100px;
+}
+
+.weui-cell .weui-cell__msg .level{
+  font-size: 24rpx;
+  color: #949494;
+}
+
+.weui-cell .weui-cell__msg .name{
+  font-size: 35rpx;
+  font-weight: bold;
+}
+
+.weui-cell .weui-cell__msg.info-freight{
+  color: red;
+}
+
+.event-scroll {
+  width: 100%;
+  white-space: nowrap;
+}

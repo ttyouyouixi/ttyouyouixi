@@ -1,0 +1,28 @@
+<!-- index.wxml -->
+<!-- 轮播图部分 -->
+<view class="page" style="background-color:white;height: 100%;">
+  <!-- 搜索框 -->
+  <view class="weui-search-bar" style="background-color: #FFD500">
+    <view class="weui-search-bar__cancel-btn" bindtap="hideInput" style="color:black">{{cityName}}</view>
+    <view class="weui-search-bar__form" style="border-radius:20px">
+      <view class="weui-search-bar__box">
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        <input type="text" class="weui-search-bar__input" placeholder="搜索" bindinput="inputTyping" bindfocus="routeSearch" />
+      </view>
+    </view>
+
+  </view>
+  <!-- 轮播 -->
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="3000">
+    <block wx:for="{{banners}}" wx:key="_id">
+      <swiper-item>
+        <image src="{{item.url}}" class="slide-image" mode="aspectFill" bindtap="itemClick" data-proid="{{item.id}}" />
+      </swiper-item>
+    </block>
+  </swiper>
+<view class="text-title" style="font-weight:bold;margin-top: 100rpx;text-align:center">带物君请选择</view>
+
+      <button class="weui-btn" style="" type="primary" bindtap="selectFrom">从 {{cityName}} 出发</button>
+            <button class="weui-btn" style="margin-top: 100rpx;" type="primary" bindtap="selectTo">到达 {{cityName}}</button>
+
+</view>

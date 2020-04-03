@@ -1,0 +1,72 @@
+<!-- 我的帮带物订单 -->
+<view class="page">
+  <!-- 物品详情 -->
+  <view class="weui-panel weui-panel_access" style="margin-top:20rpx">
+    <view class="weui-panel__hd">{{orderbean.userCNickName}}</view>
+    <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_appmsg">
+        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+          <image class="weui-media-box__thumb" src="{{orderbean.image}}"  />
+        </view>
+        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+          <view class="weui-media-box__title">{{orderbean.productName}}</view>
+          <view class="weui-media-box__desc">{{orderbean.extra}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 信息栏 -->
+  <view class="weui-form-preview" style="margin-top:20rpx">
+    <view class="weui-form-preview__hd">
+      <view class="weui-form-preview__label">交易状态</view>
+      <view class="weui-form-preview__value_in-hd">{{orderbean.stateName}}</view>
+    </view>
+    <view class="weui-form-preview__bd">
+      <view class="weui-form-preview__item">
+        <view class="weui-form-preview__label">订单金额</view>
+        <view class="weui-form-preview__value">¥ {{orderbean.price}}</view>
+      </view>
+      <view class="weui-form-preview__item">
+        <view class="weui-form-preview__label">订单编号</view>
+        <view class="weui-form-preview__value">{{orderbean.No}}</view>
+      </view>
+      <view class="weui-form-preview__item">
+        <view class="weui-form-preview__label">发起时间</view>
+        <view class="weui-form-preview__value">{{orderbean.startDate}}</view>
+      </view>
+      <view class="weui-form-preview__item">
+        <view class="weui-form-preview__label">带物路线</view>
+        <view class="weui-form-preview__value">{{orderbean.fromCity}} - {{orderbean.toCity}}</view>
+      </view>
+    </view>
+    <view class="weui-form-preview__ft" wx:if="{{orderbean.state!='0'&&orderbean.state!='5'}}">
+      <view class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active"
+            bindtap="orderAction">
+      {{(orderbean.state=='1'||orderbean.state=='2')?'取消带物':((orderbean.state=='3'||orderbean.state=='6')?'联系客服':'评价')}}
+      </view>
+      <navigator class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">
+      联系物主
+      </navigator>
+    </view>
+  </view>
+  <!-- 是否同意B取消带单 -->
+  <view wx:if="{{orderbean.state=='6'}}">
+    <view class="weui-cells__title"></view>
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__hd">消息:</view>
+      <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_text">
+          <view class="weui-media-box__title">物主申请关闭订单,是否同意?</view>
+        </view>
+      </view>
+      <view class="weui-panel__ft">
+        <view class="weui-form-preview__ft">
+          <view class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active"
+                bindtap="orderAction">拒绝</view>
+          <view class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active"
+                bindtap="orderAction">同意</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

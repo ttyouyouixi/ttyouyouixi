@@ -1,0 +1,139 @@
+<!-- 我的帮带物订单 -->
+<import src="../../components/rater/rater.wxml"  />
+<view class="page">
+  <!-- 物品详情 -->
+  <view class="weui-panel weui-panel_access" style="margin-top:20rpx">
+    <view class="weui-panel__hd">{{orderbean.userCNickName}}</view>
+    <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_appmsg">
+        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+          <image class="weui-media-box__thumb" src="{{orderbean.image}}"  />
+        </view>
+        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+          <view class="weui-media-box__title">{{orderbean.productName}}</view>
+          <view class="weui-media-box__desc">{{orderbean.extra}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 信息栏 -->
+  <view class="weui-form-preview" style="margin-top:20rpx">
+    <view class="weui-form-preview__hd">
+      <view class="weui-form-preview__label">交易状态</view>
+      <view class="weui-form-preview__value_in-hd">{{orderbean.stateName}}</view>
+    </view>
+    <view class="weui-form-preview__bd">
+      <view class="weui-form-preview__item">
+        <view class="weui-form-preview__label">订单金额</view>
+        <view class="weui-form-preview__value">¥ {{orderbean.price}}</view>
+      </view>
+      <view class="weui-form-preview__item">
+        <view class="weui-form-preview__label">订单编号</view>
+        <view class="weui-form-preview__value">{{orderbean.No}}</view>
+      </view>
+      <view class="weui-form-preview__item">
+        <view class="weui-form-preview__label">发起时间</view>
+        <view class="weui-form-preview__value">{{orderbean.startDate}}</view>
+      </view>
+      <view class="weui-form-preview__item">
+        <view class="weui-form-preview__label">带物路线</view>
+        <view class="weui-form-preview__value">{{orderbean.fromCity}} - {{orderbean.toCity}}</view>
+      </view>
+    </view>
+    <!-- todo,订单状态对应的可操作 -->
+    <view class="weui-form-preview__ft" wx:if="{{orderbean.state!='5'&&orderbean.state!='6'}}">
+      <view class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active"
+            bindtap="orderAction">{{orderbean.state=='3'?'联系客服':(orderbean.state=='4'?'评价交易':'取消带物')}}</view>
+      <navigator class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">
+      {{orderbean.state=='0'?'修改订单':'关闭订单'}}
+      </navigator>
+    </view>
+  </view>
+  <!--<view class="weui-form-preview" style="margin-top:20rpx">
+  <view class="weui-form-preview__hd">
+    <view class="weui-form-preview__label">带物君信息</view>
+    <view class="weui-form-preview__value_in-hd"></view>
+  </view>
+  <view class="weui-form-preview__bd">
+    <view class="weui-cells weui-cells_after-title">
+      <navigator url="../userInfo/userInfo" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+          <image src="https://pro.modao.cc/uploads3/images/898/8984845/raw_1492884442.png" class="round-img"></image>
+        </view>
+        <view class="weui-cell__msg  weui-cell__ft_in-access info-content">
+          <view class="name">麦芽</view>
+          <view class="level">
+            <icon type="success" size="15" class="icon-left"  />
+            总监</view>
+          </view>
+        </navigator>
+        <view class="weui-cell">
+          <view class="weui-cell__bd">综合评分</view>
+          -->
+          <!--<view class="weui-cell__ft">
+          <template is="rater" data="{{ ...$wux.rater.star }}"  />
+        </view>
+        -->
+        <!--</view>
+      </view>
+    </view>
+    -->
+    <!-- todo,订单状态对应的可操作 -->
+    <!--<view class="weui-form-preview__ft">
+    <view class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active"
+          bindtap="orderAction">拒绝</view>
+    <view class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active"
+          bindtap="orderAction">同意</view>
+  </view>
+</view>
+-->
+<!-- 是否同意B的申请 -->
+<view wx:if="{{orderbean.state=='1'}}">
+  <view class="weui-cells__title" style="margin-top:50rpx">有人接单啦,您可以选择同意或者拒绝</view>
+  <view class="weui-panel weui-panel_access">
+    <view class="weui-panel__hd">带物君信息</view>
+    <view class="weui-panel__bd">
+      <navigator url="../orderUserInfo/orderUserInfo"
+                 class="weui-media-box weui-media-box_appmsg weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+          <image src="https://pro.modao.cc/uploads3/images/898/8984845/raw_1492884442.png" class="round-img"></image>
+        </view>
+        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg weui-cell__ft_in-access">
+          <view class="weui-media-box__title">麦芽</view>
+          <view class="weui-media-box__desc">
+            <template is="rater" data="{{ ...$wux.rater.star }}"  />
+          </view>
+        </view>
+      </navigator>
+    </view>
+    <view class="weui-panel__ft">
+      <view class="weui-form-preview__ft">
+        <view class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active"
+              bindtap="orderAction">拒绝</view>
+        <view class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active"
+              bindtap="orderAction">同意</view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 是否同意B取消带单 -->
+<view wx:if="{{orderbean.state=='3'}}">
+  <view class="weui-cells__title"></view>
+  <view class="weui-panel weui-panel_access">
+    <view class="weui-panel__hd">消息</view>
+    <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_text">
+        <view class="weui-media-box__title">带物君申请取消带物,是否同意?</view>
+      </view>
+    </view>
+    <view class="weui-panel__ft">
+      <view class="weui-form-preview__ft">
+        <view class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active"
+              bindtap="orderAction">拒绝</view>
+        <view class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active"
+              bindtap="orderAction">同意</view>
+      </view>
+    </view>
+  </view>
+</view>
+</view>

@@ -1,0 +1,76 @@
+<view class="page">
+    <!-- 物品详情 -->
+    <view class="weui-panel weui-panel_access" style="margin-top:20rpx">
+        <view class="weui-panel__bd">
+            <view class="weui-media-box weui-media-box_appmsg">
+                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                    <image class="weui-media-box__thumb"
+                           src="https://pro.modao.cc/uploads3/images/914/9148321/raw_1493542564.png"  />
+                </view>
+                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                    <view class="weui-media-box__title">YSL星空限量版 10支</view>
+                    <view class="weui-media-box__desc">轻拿轻放,怕高温</view>
+                </view>
+            </view>
+        </view>
+        <view class="weui-btn-area">
+            <navigator url="../editOrder/editOrder">
+                <button class="weui-btn" type="primary">修改订单</button>
+            </navigator>
+        </view>
+    </view>
+    <!-- 信息栏 -->
+    <view class="weui-form-preview" style="margin-top:20rpx">
+        <view class="weui-form-preview__hd">
+            <view class="weui-form-preview__label">交易状态</view>
+            <view class="weui-form-preview__value_in-hd">已发起</view>
+        </view>
+        <view class="weui-form-preview__bd">
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">订单金额</view>
+                <view class="weui-form-preview__value">¥ 100</view>
+            </view>
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">发布时间</view>
+                <view class="weui-form-preview__value">2017-05-07 13:42:55</view>
+            </view>
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">收发货城市</view>
+                <view class="weui-form-preview__value">马德里 》 重庆</view>
+            </view>
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">预计送达时间</view>
+                <view class="weui-form-preview__value">2017/06/27 前</view>
+            </view>
+        </view>
+        <view class="weui-form-preview__ft">
+            <view class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active"
+                  bindtap="close">关闭订单</view>
+            <navigator class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">
+            联系带物君
+            </navigator>
+        </view>
+    </view>
+    <!-- 申请接单人 -->
+    <view class="weui-form-preview" style="margin-top:20rpx">
+        <view class="weui-form-preview__hd">
+            <view class="weui-form-preview__label">消息</view>
+            <view class="weui-form-preview__value_in-hd">申请接单</view>
+        </view>
+        <view class="weui-form-preview__bd">
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">申请人</view>
+                <view class="weui-form-preview__value">Jon Snow</view>
+            </view>
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">评分</view>
+                <view class="weui-form-preview__value">4.5(满分5)</view>
+            </view>
+        </view>
+        <view class="weui-form-preview__ft">
+            <view class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active"
+                  bindtap="cancelOrder">拒绝</view>
+            <navigator class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">同意</navigator>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,70 @@
+{
+  "pages": [
+    "pages/main/main",
+    "pages/index/index",
+    "pages/create/create",
+    "pages/msg/msg",
+    "pages/mine/mine",
+    "pages/info/info",
+    "pages/search/search",
+    "pages/userInfo/userInfo",
+    "pages/editMobile/editMobile",
+    "pages/orderUserInfo/orderUserInfo",
+    "pages/getOrderSuccess/getOrderSuccess",
+    "pages/getOrderFail/getOrderFail",
+    "pages/IOrderList/IOrderList",
+    "pages/orderInfo_B/orderInfo_B",
+    "pages/orderInfo_C/orderInfo_C",
+    "pages/editOrder/editOrder",
+    "pages/site/site",
+    "pages/feedback/feedback",
+    "pages/selectCity/selectCity",
+    "pages/fromToFilter/fromToFilter",
+    "pages/orderList/orderList",
+    "pages/orderInfo/orderInfo",
+    "pages/user2bOrder/user2bOrder",
+    "pages/user2cOrder/user2cOrder",
+    "pages/User2bOrderInfo/User2bOrderInfo",
+    "pages/User2cOrderInfo/User2cOrderInfo",
+    "pages/starComment/starComment"
+  ],
+  "window": {
+    "enablePullDownRefresh": false,
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#FFD500",
+    "backgroundColor": "#ffffff",
+    "navigationBarTitleText": "带物小程序",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#FFD500",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/main/main",
+        "iconPath": "image/index_un.png",
+        "selectedIconPath": "image/index_in.png",
+        "text": "主页"
+      },
+      {
+        "pagePath": "pages/create/create",
+        "iconPath": "image/edit_un.png",
+        "selectedIconPath": "image/edit_in.png",
+        "text": "发布"
+      },
+      {
+        "pagePath": "pages/msg/msg",
+        "iconPath": "image/msg_un.png",
+        "selectedIconPath": "image/msg_in.png",
+        "text": "消息"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "image/mine_un.png",
+        "selectedIconPath": "image/mine_in.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

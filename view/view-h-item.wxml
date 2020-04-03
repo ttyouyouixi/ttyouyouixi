@@ -1,0 +1,54 @@
+
+<!-- 封装的控件,横向滚动的推荐item,搭配wxss使用 -->
+<!-- 首页的横向item -->
+<template name="view-h-item-main">
+  <view class="event-wrapper" bindtap="itemClick" data-proid="{{item.id}}" hover-class="weui-cell_active">
+    <view class="event-content">
+      <image class="event-poster" src="{{event.image}}" mode="aspectFill"></image>
+      <view class="event-summary">
+        <text class="event-title">{{event.weight}} | {{event.Deadline}}</text>
+        <view>
+          <text class="tag">{{event.group}}</text>
+          <text class="text-price">{{event.price}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+<!-- 我的-单个订单-B -->
+<template name="view-h-item-order_B">
+  <view class="event-wrapper" bindtap="itemClick_B" hover-class="weui-cell_active">
+    <view class="event-content">
+      <image class="event-poster" src="{{item.image}}" mode="aspectFill"></image>
+      <view class="event-summary">
+        <view style="width:180rpx">
+          {{item.weight}}<a style="float:right">
+          {{item.group}}
+        </a>
+        </view>
+        <view>
+          <text class="tag">{{item.state}}</text>
+        </view>
+        <button class="weui-btn mini-btn" type="primary" size="mini" catchtap="contact_B">联系物主</button>
+      </view>
+    </view>
+  </view>
+</template>
+<template name="view-h-item-order_C">
+  <view class="event-wrapper" bindtap="itemClick_C" hover-class="weui-cell_active">
+    <view class="event-content">
+      <image class="event-poster" src="{{item.image}}" mode="aspectFill"></image>
+      <view class="event-summary">
+        <view style="width:180rpx">
+          {{item.weight}}<a style="float:right">
+          {{item.group}}
+        </a>
+        </view>
+        <view>
+          <text class="tag">{{item.state}}</text>
+        </view>
+        <button class="weui-btn mini-btn" type="primary" size="mini" catchtap="contact_C">联系物主</button>
+      </view>
+    </view>
+  </view>
+</template>

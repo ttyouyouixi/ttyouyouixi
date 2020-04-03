@@ -1,0 +1,7 @@
+/* msg.wxss */
+@import "/view/view-v-item.wxss";
+page{
+  background-color: white;
+}
+
+

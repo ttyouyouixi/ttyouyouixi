@@ -1,0 +1,10 @@
+<!--引入模板文件-->
+<import src="../../view/view-v-item.wxml" />
+<view class="page">
+<!--筛选后的订单列表-->
+  <block wx:for="{{orderList}}" wx:for-item="item" wx:key="id">
+    <view class="page-session">
+      <template is="view-v-item-main" data="{{item}}"  />
+    </view>
+  </block>
+</view>

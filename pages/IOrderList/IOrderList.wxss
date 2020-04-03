@@ -1,0 +1,5 @@
+@import "/view/view-h-item.wxss";
+.event-scroll {
+  width: 100%;
+  white-space: nowrap;
+}

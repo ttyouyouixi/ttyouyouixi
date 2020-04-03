@@ -1,0 +1,132 @@
+<import src="../../components/rater/rater.wxml"  />
+<import src="../../view/view-h-item.wxml"  />
+<!-- index.wxml -->
+<view class="page">
+  <!--<view  bindtap="bindViewTap" class="userinfo">
+  <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+  <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+</view>
+<text class="user-motto">{{motto}}</text>
+-->
+<view class="weui-cells weui-cells_after-title">
+  <navigator url="../userInfo/userInfo" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__bd">
+      <image src="{{userInfo.avatarUrl}}" class="round-img"></image>
+    </view>
+    <view class="weui-cell__msg  weui-cell__ft_in-access info-content">
+      <view class="name">{{userInfo.nickName}}</view>
+      <view class="level">
+        <icon type="success" size="15" class="icon-left"  />
+        {{pro.level}}</view>
+      </view>
+    </navigator>
+    <view class="weui-cell">
+      <view class="weui-cell__bd">综合评分</view>
+      <view class="weui-cell__ft">
+        <template is="rater" data="{{ ...$wux.rater.star }}"  />
+      </view>
+    </view>
+  </view>
+  <!-- 菜单 -->
+  <view class="weui-cells__title"></view>
+  <view class="weui-cells weui-cells_after-title">
+    <!-- 帮带订单 -->
+    <navigator url="../user2bOrder/user2bOrder" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+        <image src="../../image/edit_in.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+      </view>
+      <view class="weui-cell__bd">帮带订单</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+  </view>
+  <!-- 被带订单 -->
+  <view class="weui-cells__title"></view>
+  <view class="weui-cells weui-cells_after-title">
+    <navigator url="../user2cOrder/user2cOrder" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+        <image src="../../image/edit_in.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+      </view>
+      <view class="weui-cell__bd">被带订单</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+  </view>
+  <!-- 问题反馈 -->
+  <!--<view class="weui-cells__title"></view>
+  <view class="weui-cells weui-cells_after-title">
+    <navigator url="../feedback/feedback" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+        <image src="../../image/edit_in.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+      </view>
+      <view class="weui-cell__bd">问题反馈</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+  </view>-->
+  <view class="weui-btn-area" style="margin-top:100rpx">
+    <button class="weui-btn" open-type="contact" session-from="weapp" type="primary">意见反馈</button>
+  </view>
+  <!--<view class="weui-cells__title">
+</view>
+<view class="weui-cells weui-cells_after-title">
+  <navigator url="../site/site" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__bd">
+      <icon type="success" size="20" class="icon-left"  />
+      常用地址</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    <navigator url="../feedback/feedback" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__bd">
+        <icon type="success" size="20" class="icon-left"  />
+        反馈我们</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+    </view>
+    -->
+    <!-- 带物君订单 -->
+    <!--<view class="weui-cells__title">
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+    <navigator url="../IOrderList/IOrderList?type=1" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__bd">
+        <icon type="success" size="20" class="icon-left"  />
+        带物君订单</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access">显示更多</view>
+      </navigator>
+    </view>
+    <view style="background-color:white;padding:20rpx">
+      <view style="display:flex">
+        <view>马德里-重庆</view>
+        <view style="flex:1;margin-left:20rpx">2017/06/20出发</view>
+        <view style="color:red">仍可带10kg</view>
+      </view>
+      <scroll-view class="event-scroll" scroll-x="true">
+        <block wx:for="{{B_orderList}}" wx:key="*this">
+          <template is="view-h-item-order_B" data="{{item}}"  />
+        </block>
+      </scroll-view>
+    </view>
+    -->
+    <!-- 求带走订单 -->
+    <!--<view class="weui-cells__title">
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+    <navigator url="../IOrderList/IOrderList?type=2" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__bd">
+        <icon type="success" size="20" class="icon-left"  />
+        求带走订单</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access">显示更多</view>
+      </navigator>
+    </view>
+    <view style="background-color:white;padding:20rpx">
+      <view style="display:flex">
+        <view>马德里-重庆</view>
+        <view style="flex:1;margin-left:20rpx">2017/06/20出发</view>
+        <view style="color:red">仍可带10kg</view>
+      </view>
+      <scroll-view class="event-scroll" scroll-x="true">
+        <block wx:for="{{C_orderList}}" wx:key="*this">
+          <template is="view-h-item-order_C" data="{{item}}"  />
+        </block>
+      </scroll-view>
+    </view>
+    -->
+  </view>

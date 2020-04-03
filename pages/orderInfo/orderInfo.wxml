@@ -1,0 +1,77 @@
+<import src="../../components/rater/rater.wxml" />
+<view class="page">
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="3000">
+    <block wx:for="{{banners}}" wx:key="id">
+      <swiper-item>
+        <image src="{{item.url}}" class="slide-image" mode="aspectFill" bindtap="itemClick" id="{{index}}" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 基本信息 -->
+  <view class="weui-cells weui-cells_after-title">
+    <navigator url="../orderUserInfo/orderUserInfo" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__bd">
+        <image src="{{orderBean.head}}" class="round-img"></image>
+      </view>
+      <view class="weui-cell__msg  weui-cell__ft_in-access info-content">
+        <view class="name">{{orderBean.nickName}}</view>
+        <view class="level">
+          <icon type="success" size="15" class="icon-left" /> {{orderBean.level}}
+        </view>
+      </view>
+    </navigator>
+    <view class="weui-cell">
+      <view class="weui-cell__bd">综合评分</view>
+      <view class="weui-cell__ft">
+        <template is="rater" data="{{ ...$wux.rater.star }}" />
+      </view>
+    </view>
+  </view>
+  <!-- 订单路线 -->
+  <view class="weui-cells__title"></view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">带物路线</view>
+      <view class="weui-cell__ft">{{orderBean.from}} - {{orderBean.to}}</view>
+    </view>
+  </view>
+  <!-- 订单信息 -->
+  <view class="weui-cells__title"></view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">物品类别</view>
+      <view class="weui-cell__ft">{{orderBean.group}}</view>
+    </view>
+    <view class="weui-cell">
+      <view class="weui-cell__bd">包裹重量</view>
+      <view class="weui-cell__ft">{{orderBean.weight}} KG</view>
+    </view>
+    <view class="weui-cell">
+      <view class="weui-cell__bd">特别属性</view>
+      <view class="weui-cell__ft">{{orderBean.special}}</view>
+    </view>
+  </view>
+  <!-- 订单介绍 -->
+  <view class="weui-cells__title">订单介绍</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view style="color:#999999;padding:15px 10px;min-height: 200rpx">{{orderBean.orderContent}}</view>
+  </view>
+  <!-- 运费 -->
+  <view class="weui-cells__title"></view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">运费预计</view>
+      <view class="weui-cell__ft">{{orderBean.freight}} CNY</view>
+    </view>
+  </view>
+  <!-- 操作 -->
+  <button class="weui-btn" type="primary" bindtap="applyOrder">申请接单</button>
+  <button class="weui-btn" type="default">
+      <navigator url="">联系物主</navigator>
+    </button>
+
+  <!-- 订单失效 -->
+  <button style="margin-top=30rpx" class="weui-btn" type="default" bindtap="applyOrderFail">申请接单(失效流程)</button>
+  <!-- 未认证 -->
+  <button class="weui-btn" type="default" bindtap="applyOrderAuth">申请接单(认证流程)</button>
+</view>

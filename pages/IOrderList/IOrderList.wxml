@@ -1,0 +1,19 @@
+<import src="../../view/view-h-item.wxml"  />
+<view class="page">
+  <!-- 带物君订单 -->
+  <block wx:for="{{routeList}}" wx:key="*this" wx:for-item="route">
+    <view class="weui-cells__title"></view>
+    <view style="background-color:white;padding:20rpx">
+      <view style="display:flex">
+        <view>{{route.from+'-'+route.to}}</view>
+        <view style="flex:1;margin-left:20rpx">{{route.time}}出发</view>
+        <view style="color:red">仍可带{{route.weight}}kg</view>
+      </view>
+      <scroll-view class="event-scroll" scroll-x="true">
+        <block wx:for="{{route.orderList}}">
+          <template is="{{isB?'view-h-item-order_B':'view-h-item-order_C'}}" data="{{item}}"  />
+        </block>
+      </scroll-view>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,28 @@
+.image {
+  width: 100%;
+  height: 60vw;
+}
+
+.msg {
+  width: 100%;
+  padding: 10px;
+}
+
+.text {
+  display: block;
+}
+
+.weui-cell .weui-cell__msg .level{
+  font-size: 24rpx;
+  color: #949494;
+
+}
+
+.weui-cell .weui-cell__msg .name{
+  font-size: 35rpx;
+  font-weight: bold;
+}
+
+.weui-cell .weui-cell__msg.info-freight{
+  color: red;
+}

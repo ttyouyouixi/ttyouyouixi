@@ -1,0 +1,11 @@
+/*引入横向item样式*/
+@import "/view/view-v-item.wxss";
+.orderState{
+    padding: 30rpx;
+    display: flex;
+    color: orangered;
+      border-width: 0px 0px 1px 0px;
+  border-style: solid;
+  border-color: #e6e6e6;
+
+}

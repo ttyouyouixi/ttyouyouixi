@@ -1,0 +1,42 @@
+<view class="page">
+  <view class="weui-cells__title">根据出发日期筛选</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+     <view class="weui-cell__bd cell-title">出发日期</view>
+      <view class="weui-cell__ft">
+        <picker mode="date" value="{{fromDate}}" start="{{startDate}}" bindchange="bindDateChange">
+          <view class="weui-input">{{fromDate}}</view>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <!--<view class="weui-cells weui-cells_after-title">
+  <!-- 出发日期 -->
+  <!--<navigator url="../selectCity/selectCity?type=1" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__bd cell-title">出发日期</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access">
+      <picker mode="date" value="{{fromDate}}" start="{{startDate}}" bindchange="bindDateChange">
+        <view class="weui-input">{{fromDate}}</view>
+      </picker>
+    </view>
+  </navigator>
+</view>-->
+
+<!-- 私密信息 -->
+<view class="weui-cells__title">根据目的地筛选</view>
+<view class="weui-cells weui-cells_after-title">
+  <!-- 出发城市 -->
+  <navigator url="../selectCity/selectCity?type=1" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__bd cell-title">出发城市</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access">{{fromCityName||'从哪个城市出发'}}</view>
+  </navigator>
+  <!-- 到达城市 -->
+  <navigator url="../selectCity/selectCity?type=2" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__bd cell-title">到达城市</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access">{{toCityName||'到达哪个城市'}}</view>
+  </navigator>
+</view>
+<view class="weui-btn-area">
+  <button class="weui-btn" type="primary" bindtap="goOrderList" disabled="{{!fromCityName&&!toCityName}}">开始搜索</button>
+</view>
+</view>

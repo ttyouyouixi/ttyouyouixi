@@ -1,0 +1,89 @@
+<!-- 列表item封装 -->
+<!-- 首页 -->
+<template name="view-v-item-main">
+  <navigator url="../orderInfo/orderInfo?id={{item.id}}">
+    <view class="item">
+      <image class="poster" src="{{item.image}}" mode="aspectFill"></image>
+      <view class="meta">
+        <text class="title text-title">{{item.weight}} | {{item.fromCity}} - {{item.toCity}}</text>
+        <view class="sub-title text-subtitle">
+          <text class="tag">{{item.group}}</text>
+        </view>
+      </view>
+      <view class="right">
+        <text class="rating">¥ {{item.price}}</text>
+        <text class="sub-distance text-subtitle">均价¥ {{item.unitPrice}}/kg</text>
+      </view>
+    </view>
+  </navigator>
+</template>
+<!-- 消息-订单列表 -->
+<template name="view-v-item-msg">
+  <navigator url="">
+    <view class="outer">
+      <view class="left" style="margin-top: 40rpx;">
+        <image class="round-img" src="{{item.avatarUrl}}"></image>
+        <view style="background-color:#1AAD19 ;border-radius: 10rpx;padding:5rpx 0;width:100rpx; color: white">{{item.state}}</view>
+      </view>
+      <view class="right">
+        <view class="title">
+          {{item.nickName}}
+                                <a style="float:right;">
+          {{item.time}}</a>
+        </view>
+        <view class="inner" style="border: solid 1rpx #1AAD19;border-radius:5rpx">
+          <view class="left">
+            <image style="width:100rpx;height:100rpx;border-radius: 5rpx" mode="aspectFill"
+                   src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2321802262,202449454&fm=26&gp=0.jpg"></image>
+          </view>
+          <view class="right">
+            <view>{{item.form+' - '+item.to +' | ' +item.weight+'kg '+item.group}}</view>
+            <view >
+              <text style="color:red;">¥ {{item.price}}</text>
+              <text style="float:right;">{{item.createTime}}发布</text>
+            </view>
+          </view>
+        </view>
+        <view>
+          <view class="weui-progress" style="margin-top:10rpx">
+            <view class="weui-progress__bar">
+              <progress percent="{{item.progress*20}}" stroke-width="3" show-info="true"  />
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!--</block>
+    -->
+  </navigator>
+</template>
+<!-- 我的帮带物订单item -->
+<template name="view-v-item-2bOrder">
+  <navigator url="../User2bOrderInfo/User2bOrderInfo?stateCode={{item.stateWithB}}">
+    <view class="item">
+      <view class="left-text">
+        <view style="font-weight: bold;">{{item.fromCity}} - {{item.toCity}}</view>
+        <view>{{item.fromDate}} 出发</view>
+        <view>总重 : {{item.weight}} kg</view>
+        <view>总价 : ¥{{item.price}}</view>
+        <view>{{item.group}}</view>
+      </view>
+      <image class="right-img" mode="aspectFill" src="{{item.image}}"  />
+    </view>
+  </navigator>
+</template>
+<!-- 我的被带物订单item -->
+<template name="view-v-item-2cOrder">
+  <navigator url="../User2cOrderInfo/User2cOrderInfo?stateCode={{item.stateWithC}}">
+    <view class="item">
+      <view class="left-text">
+        <view style="font-weight: bold;">{{item.fromCity}} - {{item.toCity}}</view>
+        <view>{{item.fromDate}} 出发</view>
+        <view>总重 : {{item.weight}} kg</view>
+        <view>总价 : ¥{{item.price}}</view>
+        <view>{{item.group}}</view>
+      </view>
+      <image class="right-img" mode="aspectFill" src="{{item.image}}"  />
+    </view>
+  </navigator>
+</template>

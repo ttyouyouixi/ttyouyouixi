@@ -1,0 +1,4 @@
+/**index.wxss**/
+/*引入横向item样式*/
+@import "/view/view-v-item.wxss";
+

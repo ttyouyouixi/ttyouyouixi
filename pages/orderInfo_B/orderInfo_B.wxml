@@ -1,0 +1,53 @@
+<view class="page">
+  <!-- 物品详情 -->
+  <view class="weui-panel weui-panel_access"  style="margin-top:20rpx">
+    <view class="weui-panel__hd">小人物</view>
+    <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_appmsg">
+        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+          <image class="weui-media-box__thumb" src="https://pro.modao.cc/uploads3/images/914/9148321/raw_1493542564.png"  />
+        </view>
+        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+          <view class="weui-media-box__title">YSL星空限量版 10支</view>
+          <view class="weui-media-box__desc">轻拿轻放,怕高温</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 信息栏 -->
+  <view class="weui-form-preview"  style="margin-top:20rpx">
+    <view class="weui-form-preview__hd">
+      <view class="weui-form-preview__label">交易状态</view>
+      <view class="weui-form-preview__value_in-hd">已发起</view>
+    </view>
+    <view class="weui-form-preview__bd">
+      <view class="weui-form-preview__item">
+        <view class="weui-form-preview__label">订单金额</view>
+        <view class="weui-form-preview__value">¥ 100</view>
+      </view>
+      <view class="weui-form-preview__item">
+        <view class="weui-form-preview__label">订单编号</view>
+        <view class="weui-form-preview__value">53835540</view>
+      </view>
+      <view class="weui-form-preview__item">
+        <view class="weui-form-preview__label">发起时间</view>
+        <view class="weui-form-preview__value">2017-05-07 13:42:55</view>
+      </view>
+      <view class="weui-form-preview__item">
+        <view class="weui-form-preview__label">收发货城市</view>
+        <view class="weui-form-preview__value">马德里 》 重庆</view>
+      </view>
+      <view class="weui-form-preview__item">
+        <view class="weui-form-preview__label">预计送达时间</view>
+        <view class="weui-form-preview__value">2017/06/27 前</view>
+      </view>
+    </view>
+    <view class="weui-form-preview__ft">
+      <view class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active"
+            bindtap="cancelOrder">取消带物</view>
+      <navigator class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">
+      联系物主
+      </navigator>
+    </view>
+  </view>
+</view>
